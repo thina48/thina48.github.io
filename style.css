@@ -1,0 +1,2227 @@
+@charset "utf-8";
+
+/*全端末（PC・タブレット・スマホ）共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body,html {width: 100%;height: 100%;}
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #666;	/*全体の文字色*/
+	font-family: "游ゴシック";
+	/* font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 14px;	/*文字サイズ*/ */
+
+	line-height: 2;		/*行間*/
+	background: #fff url(../images/bg.jpg);	/*背景色、背景画像の読み込み*/
+	background-size:cover;
+	background-repeat:repeat;
+	background-position: center;
+	background-color: #FCDEBF;
+
+
+
+	/* -webkit-text-size-adjust: none;
+	overflow-x: hidden; */
+}
+
+
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+ul {list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #fff;		/*リンクテキストの色*/
+	transition: 0.4s;	/*マウスオン時の移り変わるまでの時間設定。0.4秒。*/
+}
+a:hover {
+	text-decoration: none;	/*下線を消す設定*/
+}
+
+/*containerブロック
+---------------------------------------------------------------------------*/
+#container {
+	width: 100%;height: 100%;
+}
+
+/*ヘッダー
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
+header {
+	padding: 100px 0 140px;
+	position:relative;
+	margin-top:20px;
+
+}
+/*ヘッダーブロック（トップページへの追加設定）*/
+
+#topcenterimage{
+	width:60%;
+	margin:0 auto;
+	margin-top:30px;
+
+}
+
+
+/*ロゴ画像（トップページ以外のロゴ）*/
+header h1{
+	text-align: center;
+}
+
+#logo {
+	width: 30%;	/*画像幅*/
+	margin:0 auto;
+
+
+
+}
+/*ロゴ画像（トップページのロゴ）*/
+#top #logo img{
+	/* position: fixed;	/*画面に対して固定表示*/
+	/* left: 50%;			/*左から39%の場所に配置*/
+	/* top: 11%;			/*上から20%の場所に配置*/
+	width:100%;
+	margin:0 auto;
+	/* padding-left:10%;
+	transform: translate(-50%, -50%);		/*画像幅*/
+	animation-name: logo;	/*アニメーションのキーフレームの名前（scroll）*/
+	animation-delay: 0.5s;	/*0.5秒遅れてアニメーションをスタートさせる*/
+	animation-duration: 2S;	/*アニメーションの実行時間*/
+	animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+
+}
+
+
+
+#toplogo-text{
+	font-size:40px;
+	text-align: center;
+}
+
+#top .toppage-image{
+
+	width:35%;
+	margin:0 auto;
+	margin-top:20px;
+	/* position: fixed;
+	top:48%;
+	left: 50%; */
+
+	/* transform: translate(-50%, -50%); */
+
+}
+
+#top header {
+	padding: 0;
+	position: relative;
+	height: 90%;	/*高さ*/
+}
+
+#top-logo{
+	font-size:600%;
+	float:right;
+	position:fixed;
+	top:50%;
+	right:10%;
+	color:#F4D156;
+	text-shadow:3px 3px 5px rgb(0,0,0,0.2);
+
+
+
+}
+
+
+
+#top #logo-topfont{
+	position:fixed;
+	top: 21%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	font-size:50px;
+	color:#fff;
+	/* text-shadow:5px 5px 1px #dedede; */
+
+
+}
+
+#top #logo-toptext{
+	position: fixed;
+	top:30%;
+	left:27%;
+	width:43%;
+	background-color:rgb(255,255,255,0.5);
+	padding:50px 30px;
+	text-align:center;
+	box-shadow: 0px 0px 20px 10px rgb(255,255,255,0.5);
+	font-family:"游ゴシック";
+	border-radius: 1100px / 500px;
+}
+
+
+
+
+/*ロゴアニメーション*/
+@keyframes logo {0% {opacity: 0;}100% {opacity: 1;}}
+
+/*上部固定メインメニュー
+---------------------------------------------------------------------------*/
+/*上部メニュー設定*/
+#menubar {
+	width: 100%;display: block;
+	z-index: 2;
+	position: fixed;	/*画面上部に固定表示させる設定*/
+	top: 0px;			/*上から0pxの場所に配置*/
+	text-align: center;	/*文字を中央に*/
+	line-height: 40px;	/*高さ（行間）*/
+	background: #fff;	/*背景色（古いブラウザ用）*/
+	background: rgba(255,255,255,0.97);	/*背景色。255,255,255は白の事で、0.97は透明度97%の事。*/
+	border-bottom: 1px solid #c9c9c9;	/*下線の幅、線種、色*/
+	opacity:0.9;
+}
+/*上部メニュー設定（トップページへの追加設定）*/
+#top #menubar {
+	top: -100px;	/*画面上から-100pxの場所に配置。画面の上部（※枠外）に出しておく設定です。*/
+}
+/*メニュー１個ごとの設定*/
+#menubar li {
+	float: left;	/*左に回り込み*/
+	width: 20%;		/*幅*/
+	text-align: center;	/*文字を中央に*/
+}
+#menubar li a {
+	text-decoration: none;display: block;
+	color: #666;	/*文字色*/
+	border-left: 1px dashed #c9c9c9;	/*左の線の幅、線種、色*/
+	margin: 10px 0;	/*上下、左右へのメニュー内の余白*/
+
+}
+/*１つ目のメニューへの追加設定*/
+#menubar li:first-child a {
+	border-left: none;	/*１つ目のメニューの左線を消す設定*/
+}
+/*マウスオン時*/
+#menubar li a:hover {
+	color: #fa9837;	/*文字色*/
+	/* border: 2px dashed rgb(250,152,55,1.0);
+	border-radius: 5px; */
+
+}
+/*上部固定メニューを初期設定では非表示にする*/
+.nav-fix-pos {
+	display: none;
+}
+/*fixmenu.jsの設定値（サンプルテンプレート梱包の状態だと「700」）にスクロールした時の設定*/
+body.is-fixed .nav-fix-pos {
+	animation-name: scroll;		/*アニメーションのキーフレームの名前（scroll）*/
+	animation-duration: 0.3s;	/*アニメーションの実行時間。0.3秒。*/
+	animation-fill-mode: forwards;	/*アニメーションの完了後、最後のキーフレームを維持する*/
+}
+/*スマホ用メニューを表示させない*/
+#menubar-s {display: none;}
+/*３本バーアイコンを表示させない*/
+#menubar_hdr {display: none;}
+
+/*上部固定メインメニューのアニメーションのキーフレーム設定。
+フレームが100コマ（0%〜100%）あると思って下さい。
+---------------------------------------------------------------------------*/
+@keyframes scroll {
+
+/*0コマ目*/
+0% {
+	opacity: 0;		/*透明度（透明の状態）*/
+}
+/*100コマ目*/
+100% {
+	opacity: 1;	/*透明度（色が100%出た状態）*/
+	top: 0px;	/*画面上から0pxの場所に配置。（「#top #menubar」で枠外に出していたメニューを定位置に戻す設定）*/
+}
+
+}
+
+/*コンテンツ（色のついたメインブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	position: relative;z-index: 1;
+	margin: 0 auto;
+	max-width: 1400px;	/*最大幅*/
+	font-family: "游ゴシック";
+}
+/*コンテンツ内のh2見出し*/
+#contents h2 {
+	clear: both;
+	font-size: 30px;	/*文字サイズ*/
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
+	text-align: center;		/*文字をセンタリング*/
+	background: url(../images/line1.png) repeat-x center bottom;	/*下線用の背景画像（古いブラウザ用）*/
+	background: url(../images/line1.png) repeat-x center bottom/auto 2px;	/*下線用の背景画像*/
+}
+/*コンテンツ内のh2見出しにclass="img"をつけた場合（各ブロック冒頭の円形のアクセント用イラスト）*/
+#contents h2.img {
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 15%;		/*画像幅*/
+	padding: 5%;	/*画像と円形との間の余白*/
+	position: relative;
+	top: -100px;	/*上に100px移動させる設定*/
+	border-radius: 50%;	/*円形にする指定。外すと四角形になる。10pxなどにすると角が丸くなった四角形になる。*/
+	box-shadow: 0px 10px 0px 0px #fff,0px 15px 5px 0px rgba(0,0,0,0.2);	/*２つの影を指定。前半は白いくっきりした影、２つ目は薄い黒っぽい影。*/
+}
+/*上の円形イラスト内のテキスト*/
+#contents h2.img span {
+	color:#fff;
+	font-family:"游ゴシック";
+	font-weight:normal;
+	position: absolute;
+	width: 100%;
+	left: 0%;	/*円イラストに対して左から0%の場所に配置*/
+	top: 11%;	/*円イラストに対して上から20%の場所に配置*/
+	font-size: 1.5rem;	/*文字サイズ*/
+	letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
+}
+/*bg1〜bg4背景色（共通）*/
+.bg1,.bg2{
+	padding: 0 5% 150px;
+}
+/*clearfix（変更不要）*/
+.bg1:after,.bg2:after{
+    content: "";display: block;clear: both;
+}
+/*リンクテキストの文字色*/
+.bg1 a:hover,.bg2 a:hover{
+	color: #ffff00;
+}
+/*bg1ブロック*/
+.bg1 {
+	background:#CEE0E5;	/*背景色*/
+	color: #000;		/*文字色*/
+}
+/*bg1ブロック内の円形イラストの背景色*/
+.bg1 h2.img {
+	background: #70B9D1 !important;
+}
+/*bg2ブロック*/
+.bg2 {
+	background: #FCDEBF;	/*背景色*/
+	color: #000;			/*文字色*/
+}
+/*bg2ブロック内の円形イラストの背景色*/
+.bg2 h2.img {
+	background: #F7B87E !important;
+}
+
+
+
+
+/*コンテンツ内のh2見出し*/
+#contents h3 {
+	position:relative;
+	width:80%;
+	margin:0 auto;
+	clear: both;
+	margin-bottom: 20px;
+	padding: 5px 20px;
+	background: #333;	/*背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.2);	/*背景色。0,0,0は黒の事で0.2は透明度20%の事。*/
+	text-align: center;	/*文字をセンタリング*/
+	font-size: 16px;	/*文字サイズ*/
+	border-radius: 50px;	/*角丸のサイズ*/
+	letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
+
+
+
+}
+
+
+
+#contents #timetext span{
+	font-weight:bolder;
+	/* color:#fa9837; */
+	color:#5bb4d2;
+	font-size:17px;
+}
+
+
+
+/*段落タグ*/
+#contents p {
+	width:70%;
+	margin:0 auto;
+	padding: 0 30px;
+	margin-bottom:30px;		/*上、左右、下への余白*/
+}
+/*段落タグが続いた場合の設定*/
+#contents p + p {
+	margin-top: -10px;
+}
+
+
+
+#mustknown{
+	width:78%;
+	margin:0 auto;
+
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+  align-items: center;
+
+}
+
+
+
+#mustknown ul, ol {
+	color: #000;
+  /* border: dashed 2px rgba(249,174,99,1.0);/*二重線 太さ 色*/
+	border:2px dashed rgb(91,180,210,1.0);
+  padding: 0.5em 1.0em;
+  width:320px;
+	margin:0 auto;
+	font-size:19px;
+	margin-bottom:15px;
+
+
+}
+
+#mustknown ul li{
+	line-height: 50px;
+}
+
+
+#mustknown #time-list1{
+	background: linear-gradient(transparent 50%, rgb(91,180,210,0.5) 0%);
+	line-height:35px;
+	margin-bottom: 10px;
+
+}
+
+
+
+#contents #timelist-text{
+	width:50%;
+	/* border-left:4px solid #F9AE63; */
+	border-left:4px solid #5bb4d2;
+
+	padding:0 0 0 30px;
+	margin-left: 50px;
+
+
+
+
+}
+
+#mustknown i{
+	/* color:#F9AE63; */
+	color:#5bb4d2;
+	padding:0 10px;
+}
+
+#news i{
+	font-size:17px;
+	color:#7F9167;
+	padding:0 15px 0 20px;
+}
+
+#news p {
+    position: relative;
+    padding:0.25em 3em;
+		background-color: rgb(249, 171, 97, 0.1);
+		line-height: 35px;
+}
+#news p:before,#news p:after{
+    content:'';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+#news p:before{
+    border-left: solid 3px #fa9837;
+    border-top: solid 3px #fa9837;
+    top:0;
+    left: 0;
+}
+#news p:after{
+    border-right: solid 3px #fa9837;
+    border-bottom: solid 3px #fa9837;
+    bottom:0;
+    right: 0;
+}
+
+
+#news ul {
+	width:60%;
+	margin:0 auto;
+  counter-reset:number; /*数字をリセット*/
+  list-style-type: none!important; /*数字を一旦消す*/
+
+}
+#news ul li {
+  position: relative;
+  padding: 0.5em 0.5em 0.5em 50px;
+  line-height: 2.0em;
+}
+#news ul li:before{
+  /* 以下数字をつける */
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  /*数字のデザイン変える*/
+  display:inline-block;
+  background: #fa9837;
+  color: white;
+  font-family: "游ゴシック";
+  font-weight:bold;
+  font-size: 15px;
+  border-radius: 50%;/*円にする*/
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  /*以下 上下中央寄せのため*/
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#news ul li:after {/*吹き出しのちょこんと出た部分*/
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;/*左からの位置*/
+  height: 0;
+  width: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid #fa9837;
+  /*以下 上下中央寄せのため*/
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+#br-sp {
+	 display:none;
+ }
+
+
+/* 子犬子猫をむかえたらのページ */
+.prevbtn{
+	text-decoration:none;
+	color:#fff;
+	font-size:17px;
+	background-color: #fa9837;
+	position:fixed;
+	bottom:0;
+	right:0;
+	z-index: 10;
+	opacity: 0.8;
+
+	padding:10px 20px;
+	border-radius: 5px;
+
+}
+
+.prevbtn:hover{
+	opacity: 1.0;
+
+}
+
+.kitten-puppy {
+	width:300px;
+}
+
+#kitten-letter{
+	background-image:url(../images/kittenbg.png);
+	background-repeat: no-repeat;
+	padding:50px 0;
+	width:70%;
+	margin:0 auto;
+	margin-bottom: 80px;
+
+	box-shadow:0 15px 20px rgba(0,0,0,0.5);
+
+}
+
+#kitten-letter p{
+	line-height:35px;
+	width:85%;
+
+}
+
+#kitten-letter h4{
+	font-size:17px;
+	text-align: center;
+}
+
+#kitten-letter img{
+	display:block;
+	width:300px;
+	/* text-align: center; */
+	margin:0 auto;
+	padding-top: 8px;
+	margin-bottom:50px;
+
+}
+
+#kitten-letter span{
+	font-weight:bold;
+	font-size: 17px;
+	color:#fa9837;
+}
+
+#treatment{
+	display:flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: row;
+	margin-bottom: 50px;
+
+	width:87%;
+	margin: 0 auto;
+}
+
+#treatment h4{
+	border:2px solid rgb(250, 152, 55, 1.0);
+
+
+	font-size:18px;
+	font-weight:bold;
+	margin:0 10px;
+	padding:10px 20px;
+	width:300px;
+
+	text-align: center;
+}
+
+#treatment h4 span{
+	font-size:15px;
+	font-weight: normal;
+}
+
+
+#treatment h4:hover{
+  transform: scale(1.05, 1.05);
+	border:none;
+	background-color:rgb(250, 152, 55, 0.4);
+}
+
+#treatment a{
+	text-decoration: none;
+	color:#000;
+}
+
+
+/* 予防接種のページ */
+#dog-prevention{
+  counter-reset:list;
+  list-style-type:none;
+  padding: 1.5em;
+	width:70%;
+	border:none;
+}
+
+#dog-prevention li{
+  position:relative;
+  padding: 5px 5px 5px 40px;
+  margin: 7px 0 10px 30px;
+  font-weight: bold;
+	color:#fa9837;
+
+  border-bottom:dashed 2px #fa9837;
+}
+#dog-prevention li:before{
+  counter-increment: list;
+  content: counter(list);
+  position: absolute;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  background: #fa9837;
+  border-radius: 50%;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#dog-prevention img{
+	width:35px;
+	padding:0 10px;
+	padding-bottom:5px;
+
+
+}
+
+#dog-prevention p{
+	font-size:14px;
+	line-height: 28px;
+	width:83%;
+
+}
+
+#dog-prevention p span{
+	position: relative;
+	padding-left:25px;
+
+}
+
+#dog-prevention p span:before{
+	position: absolute;
+	top:0;
+	left:0;
+	content:"※";
+	line-height: 20px;
+	/* color:#fa9837; */
+	font-weight: bold;
+	font-size:16px;
+}
+
+#prevention-request{
+	font-size:17px;
+	color:#fa9837;
+	text-align: center;
+	font-weight: bold;
+	padding-top:100px;
+	line-height: 30px;
+
+}
+
+
+
+/* 不妊手術のページ */
+.surgerypage span{
+	font-weight:bold;
+	font-size: 17px;
+	color:#fa9837;
+}
+
+.surgerypage img{
+	width:35px;
+}
+
+.surgerypage{
+	line-height: 28px;
+}
+
+
+/* 院内設備のページ */
+
+#hospitalinside-flex{
+	display:flex;
+	justify-content: center;
+	width:87%;
+	align-self: center;
+	margin: 0 auto;
+	flex-direction: row;
+	margin-bottom: 50px;
+
+}
+
+#hospitalinside-flex div{
+	width:29%;
+	text-align: center;
+	border:4px solid #5bb4d2;
+	margin:10px;
+	border-radius:20px;
+	padding:20px;
+}
+
+#hospitalinside-flex h4{
+	background: linear-gradient(transparent 50%, rgb(91,180,210,0.6) 0%);
+	font-size: 20px;
+	margin-bottom:20px;
+}
+
+#hospitalinside-flex img{
+	margin-bottom:20px;
+}
+
+#hospitalinside-flex p{
+	display: inline;
+
+	width:75%;
+	font-size: 13px;
+	border-bottom: dashed 1px #898989;
+	padding:0;
+}
+
+
+
+
+
+
+
+
+
+
+/* ごあいさつのページ */
+
+#greeting-contents{
+	display:flex;
+	justify-content: center;
+	width:80%;
+	align-self: center;
+	margin: 0 auto;
+	flex-direction: row;
+	margin-bottom:50px;
+  align-items: center;
+}
+
+#greetingcard{
+	margin-right:20px;
+	box-shadow:10px 10px 20px 0px #2e2e2e;
+	width:50%;
+}
+
+
+#greeting-faceimg{
+	width:50%;
+
+
+}
+
+#greeting p{
+	line-height: 30px;
+
+}
+
+#greeting p img{
+	margin:30px 0;
+
+
+}
+
+.greeting2{
+	padding-top:80px;
+}
+
+
+
+
+
+
+
+
+/*商品メニューページの設定（menu.html）
+---------------------------------------------------------------------------*/
+/*各ボックスの設定
+
+/* 診療案内のページ */
+
+#time-table{
+	text-align: left;
+}
+
+
+table{
+	margin:0 auto;
+
+}
+
+table i,#tabletd-triangle{
+	font-size:30px;
+	color:#F9BA7A;
+
+}
+
+table th{
+	background:#F9D3AC;
+}
+
+table td{
+	background:#F9E4CF;
+}
+
+table th, table td {
+	font-family: "游ゴシック";
+	font-size:18px;
+  border: solid 4px #FCC68F;
+	padding:5px;
+	width:55px;
+	height:55px;
+	text-align: center;
+
+}
+
+
+table td{
+	height:55px;
+}
+
+table td:empty{
+	background-image: linear-gradient(-45deg, transparent 49%, #F9BA7A 49%, #F9BA7A 51%, transparent 51%, transparent);
+}
+
+#time-table p{
+	font-size:20px;
+	margin-top:25px;
+	color:#fa9837;
+	font-weight: bold;
+}
+
+
+.guide-textcenter{
+	text-align: center;
+
+}
+
+
+#hospitalguide h2{
+	margin-top:70px;
+}
+
+
+#guidelist{
+	border:dashed 2px #FCC68F;
+	width:60%;
+	padding:2em 2em 2em 4em;
+	margin:0 auto;
+	margin-bottom:30px;
+
+}
+
+#guidelist li{
+	position: relative;
+	line-height:32px;
+	font-size:15px;
+}
+
+
+#guidelist li:before {
+  font-family: "Font Awesome 5 Free";
+	font-size:1.3em;
+  content: "\f00c";
+  position: absolute;
+	font-weight: 900;
+  left : -1.8em; /*左端からのアイコンまで*/
+  color: #fa9837; /*アイ ン色*/
+}
+
+
+
+#telpage{
+	display:flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: row;
+
+	width:450px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+
+	background-color: rgb(250, 152, 55, 0.1);
+	box-shadow: 0px 0px 0px 5px rgb(250, 152, 55, 0.1);;
+	/* border: dashed 2px #fa9837; */
+	padding: 0.5em 0.5em;
+	font-size:20px;
+
+}
+
+
+#telpage h4{
+	border-right:2px solid #fa9837;
+	padding-right:20px;
+
+
+}
+
+#telpage a{
+	font-size:20px;
+}
+
+#telpage a:hover{
+	color:#fa9837;
+}
+
+#telpage a,#addresspage a{
+	color:#000;
+	text-decoration: none;
+}
+
+#telpage a:hover,#addresspage a:hover{
+	border-bottom:2px solid #fa9837;
+}
+
+
+#telpage i{
+	padding-right:10px;
+	color:#fa9837;
+	margin-left: 20px;
+	line-height: 30px;
+	font-size:20px;
+}
+
+
+#telpage-border{
+	border: dashed 2px #FCC68F;
+  width:70%;
+	margin:0 auto;
+	padding:30px 0 0 0;
+
+
+}
+
+
+#telpage-border p{
+	width:90%;
+}
+
+#telpage-border span{
+	font-weight:bold;
+	font-size:17px;
+	color:#fa9837;
+}
+
+#addresspage{
+	display:flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: row;
+	align-items: center;
+
+	width:70%;
+	margin:0 auto;
+}
+
+#addresspage img{
+	width:40%;
+	height:40%;
+}
+
+#addresspage p{
+	width:60%;
+}
+
+#addresspage p span{
+	font-size: 17px;
+	border-bottom:2px solid rgb(250, 152, 55, 0.3);
+
+}
+
+
+
+
+#attention{
+	position:relative;
+}
+
+#attention:before{
+	content: "※";
+	position:absolute;
+	left:30px;
+
+}
+
+#telephoneimg{
+	width:8%;
+	margin-left:20%;
+}
+
+#phoneline{
+	text-align: center;
+}
+
+#phoneline img{
+	width:3%;
+}
+
+
+#telpage-border li{
+	position: relative;
+	line-height:32px;
+	font-size:14px;
+	padding:0 35px 0 70px;
+}
+
+
+#telpage-border li:before {
+  font-family: "Font Awesome 5 Free";
+	font-size:1.3em;
+  content: "\f00c";
+  position: absolute;
+	font-weight: 900;
+  left : 2em; /*左端からのアイコンまで*/
+  color: #fa9837; /*アイ ン色*/
+}
+
+.margin-top{
+	margin-top:50px;
+}
+
+#night-tag{
+	font-weight:bold;
+	font-size:17px;
+	color:#fa9837;
+}
+
+#night-tag:hover{
+	transition: 0.4s;
+}
+
+
+#nighthospital{
+	width:450px;
+	margin:0 auto;
+  position: relative;
+  padding:2em 3em;
+	background-color: rgb(250, 152, 55, 0.1);
+	line-height: 35px;
+}
+
+#nighthospital ul{
+	width:90%;
+	margin:0 auto;
+	padding-left: 110px;
+
+}
+
+#nighthospital li{
+	line-height: 40px;
+}
+
+
+
+
+#nighthospital-name{
+	font-size:17px;
+	border-top:dashed 3px #fa9837;
+	border-bottom:dashed 3px #fa9837;
+	width:380px;
+	margin:0 auto;
+	margin-bottom:30px;
+
+}
+/* 夜間救急電話 */
+#nighthos-tel{
+	position: relative;
+	line-height:32px;
+	font-size:15px;
+}
+
+#nighthos-tel a:hover{
+	color:#fa9837;
+	border-bottom:2px solid #fa9837;
+}
+
+
+#nighthos-tel:before {
+  font-family: "Font Awesome 5 Free";
+	font-size:1.5em;
+  content: "\f095";
+  position: absolute;
+	font-weight: 900;
+  left : -1.8em; /*左端からのアイコンまで*/
+  color: #fa9837; /*アイ ン色*/
+}
+/* 夜間救急住所 */
+#nighthos-address{
+	position: relative;
+	line-height:32px;
+	font-size:15px;
+}
+
+
+#nighthos-address:before {
+  font-family: "Font Awesome 5 Free";
+	font-size:1.5em;
+  content: "\f3c5";
+  position: absolute;
+	font-weight: 900;
+  left : -1.8em; /*左端からのアイコンまで*/
+  color: #fa9837; /*アイ ン色*/
+}
+
+/* 夜間救急時間 */
+#nighthos-time{
+	position: relative;
+	line-height:32px;
+	font-size:15px;
+}
+
+
+#nighthos-time:before {
+  font-family: "Font Awesome 5 Free";
+	font-size:1.5em;
+  content: "\f017";
+  position: absolute;
+	font-weight: 900;
+  left : -1.8em; /*左端からのアイコンまで*/
+  color: #fa9837; /*アイ ン色*/
+}
+
+#nighthospital a{
+	color:#000;
+	text-decoration:none;
+}
+
+#nighthospital a:hover{
+	content:"発信する"
+}
+
+
+
+/* じゅうべえ日記のページ */
+
+#contents #jubee-image{
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	position: relative;
+	overflow: hidden; /* 不要部分を消す */
+	padding: 6px; /* 6px だけは写真からはみ出す */
+}
+#contents #jubee-image:before,
+#contents #jubee-image:after {
+	content: "";
+	position: absolute;
+	z-index: 10;
+	width: 97px;
+	height: 50px;
+	background: #fff; /* 背景色 */
+	transform: rotate(-30deg);
+}
+/* 左上 */
+#contents #jubee-image:before {
+	box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+	top: -24px;
+	bottom: auto;
+	right: auto;
+	left: -26px;
+
+}
+/* 右下 */
+#contents #jubee-image:after {
+	box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.7);
+	top: auto;
+	bottom: -22px;
+	right: -25px;
+	left: auto;
+}
+
+#contents #jubeeintroduce{
+	display:flex;
+	justify-content: center;
+	width:100%;
+	align-self: center;
+	margin: 0 auto;
+	flex-direction: row;
+	margin-bottom: 50px;
+
+
+	justify-content: center;
+  align-items: center;
+
+}
+
+#jubeeintroduce p{
+	width:80%;
+	margin:0 auto;
+	padding: 0px;
+	margin-bottom:0px;
+}
+
+
+#contents #jubee-image{
+	width:20%;
+	height:20%;
+
+}
+
+
+#contents .dialy-allimage{
+	display:flex;
+	justify-content: space-between;
+	width:90%;
+	margin: 0 auto;
+	flex-direction: row;
+	margin-bottom:30px;
+
+
+}
+
+
+#contents .dialy-allimage img{
+	width:85%;
+	box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+
+}
+
+#contents .dialy-allimage img:hover{
+	cursor:pointer;
+	opacity: 0.7;
+
+	transform: scale(1.1);	/*画像の拡大率*/
+	transition-duration: 0.3s;	/*変化に掛かる時間*/
+	overflow: hidden;
+
+}
+
+
+
+
+
+
+
+#modal-open{
+
+	width:100%;
+	height:100%;
+	background-color:rgb(255,255,255,0.6);
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100000;
+
+	display: none;
+
+}
+
+#modalopen-content{
+	background-color: #000;
+	width:60%;
+	height:75%;
+	margin:0 auto;
+	border-radius: 10px;
+	margin-top:100px;
+
+	display: flex;
+
+	flex-direction: row;
+	justify-content: center;
+  align-items: center;
+
+	position: relative;
+
+
+}
+
+#modalopen-text{
+	width:60%;
+}
+
+#modalopen-content i{
+	position: absolute;
+	top:15px;
+	right:20px;
+	color:#fff;
+	font-size:30px;
+}
+
+
+
+#modal-open img{
+	width:30%;
+	margin-left:15px;
+
+	position: relative;
+
+}
+
+#modal-open img::before{
+	width:0;
+	height:0;
+	border-top:30px solid #fff;
+	border-right:30px solid transparent;
+	border-bottom:30px solid transparent;
+	border-left:30px solid #fff;
+
+
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 10;
+
+}
+
+
+
+
+#modal-open p{
+	color:#fff;
+	font-size:12px;
+
+
+
+}
+
+#modal-open p span{
+	color:#fff;
+	font-size:20px;
+
+	padding: 15px;
+  border: 3px solid #fff;
+  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+}
+
+.image-hidden{
+	visibility: hidden;
+}
+
+#dialybtn{
+	width:14%;
+}
+
+#dialybtn:hover{
+  transform: scale(1.05, 1.05);
+
+}
+
+
+
+.list {
+	position: relative;
+	overflow: hidden;
+	float: left;	/*左に回り込み*/
+	width: 20%;		/*ボックスの幅*/
+	margin: 0 2.5% 20px;	/*上、左右、下へのボックス内の余白*/
+	height: 370px;			/*ボックスの高さ。*/
+}
+/*写真の設定*/
+.list figure img {
+	display: block;
+	border-radius: 50%;		/*円形にする設定。30pxなどにすると角丸になります。この行を削除すればそのままの画像が表示されます。*/
+	margin-bottom: 10px;	/*画像の下に空けるスペース*/
+}
+/*写真の右上にある金額*/
+.list figure span {
+	display: block;text-align: center;
+	width: 60px;	/*幅*/
+	line-height: 60px;	/*高さ*/
+	border-radius: 50%;	/*円形にする設定*/
+	font-size: 12px;	/*文字サイズ*/
+	background: #000;	/*背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.7);	/*背景色。0,0,0は黒の事で0.7は透明度70%の事。*/
+	position: absolute;
+	right: 5%;	/*listブロックに対して右から5%の場所に配置*/
+	top: 2%;	/*listブロックに対して上から2%の場所に配置*/
+}
+/*ボックス内のh4見出し*/
+.list h4 {
+	text-align: center;	/*文字をセンタリング*/
+	border-bottom: 2px dotted #fff;	/*下線の幅、線種、色*/
+	margin-bottom: 10px;	/*見出しの下に空けるスペース*/
+	font-size: 20px;		/*文字サイズ*/
+}
+/*ボックス内の段落タグ*/
+.list p {
+	padding: 0!important;
+	line-height: 1.5;	/*行間を少し狭くする*/
+}
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	position: relative;z-index: 1;
+	clear: both;
+	margin: 0 auto;
+	max-width: 1400px;	/*最大幅*/
+	background: #222 url(../images/footer_bg.png) no-repeat 90% 70%;	/*背景色、背景画像の読み込み。左から90%、上から70%の場所に配置。（古いブラウザ用）*/
+	/* background: url(../images/footer_bgimg.png) no-repeat 90% 70%/22%, url(../images/footer_bg.jpg);	/*背景画像の読み込み。サイズ幅22%。と、壁紙の読み込み。*/ */
+	color: #fff;	/*文字色*/
+	padding: 50px 0 0;	/*上、左右、下へのボックス内の余白*/
+}
+footer a {color: #fff;}
+footer a:hover {color: #ffff00;}
+footer .pr {display: block;}
+/*footer内のh3タグ*/
+footer h3 {
+	margin-bottom: 10px;
+	font-size: 30px;	/*文字サイズ*/
+	/* background: url(../images/line1.png) repeat-x center bottom/auto 2px;	/*下線用の背景画像*/ */
+}
+/*footer内の段落タグ*/
+footer p {
+	padding: 0px 10px 20px;	/*上、左右、下への余白*/
+}
+/*フッターのロゴブロック*/
+#footer-logo {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	width: 80%;	/*画像の幅*/
+}
+/*footer内の左側のブロック指定*/
+#footer-left {
+	width: 43%;	/*幅*/
+	float: left;	/*左に回り込み*/
+	padding-left: 5%;	/*左に空ける余白*/
+	padding-bottom: 50px;	/*下に空ける余白*/
+}
+/*footer内の右側のブロック指定*/
+#footer-right {
+	width: 43%;	/*幅*/
+	float: right;	/*右に回り込み*/
+	padding-right: 5%;	/*右に空ける余白*/
+	padding-bottom: 50px;	/*下に空ける余白*/
+	font-family: "游ゴシック";
+}
+
+
+
+/*コピーライト
+---------------------------------------------------------------------------*/
+#copyright {
+	clear: both;
+	text-align: center;
+	background: #111;	/*背景色*/
+}
+#copyright a {
+	text-decoration: none;
+}
+
+
+
+/*PAGE TOP設定
+---------------------------------------------------------------------------*/
+#pagetop {
+	position: relative;z-index: -1;
+	clear: both;overflow: hidden;
+	padding-top: 50px;
+	background: #fff url(../images/bottombg.jpg);	/*背景色*/
+
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-position: center;
+	background-color: #FCDEBF;
+}
+#pagetop a {
+	color: #fff;		/*文字色*/
+	font-size: 20px;	/*文字サイズ*/
+	background: #222;	/*背景色*/
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	float: right;
+	width: 100px;	/*幅*/
+	border-radius: 4px 4px 0px 0px;	/*角丸のサイズ。左上、右上、右下、左下への設定*/
+	margin-right: 5%;
+}
+/*マウスオン時*/
+#pagetop a:hover {
+	background: #000;	/*背景色*/
+}
+
+/*テーブル（ta1）
+---------------------------------------------------------------------------*/
+/*ta1設定*/
+.ta1 {
+	width: 100%;
+	margin: 0 auto 30px;
+}
+.ta1 td, .ta1 th {
+	word-break: break-all;
+	padding: 10px 15px;	/*ボックス内の余白*/
+}
+/*行の設定*/
+.ta1 tr {
+	background: url(../images/line1.png) repeat-x left bottom;	/*装飾用のライン画像の読み込み。*/
+}
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: center;	/*左よせ*/
+	background: url(../images/line1.png) repeat-x left top,rgba(255,255,255,0.2);	/*装飾用のライン画像の読み込み。*/
+}
+/*ta1の左側ボックス*/
+.ta1 th {
+	width: 140px;	/*幅*/
+	text-align: right;	/*右寄せ*/
+}
+/*左側ボックスに画像を入れた場合の設定*/
+.ta1 th img {width: 100%;}
+
+/*inviewのスタイル
+---------------------------------------------------------------------------*/
+/*共通設定（待機中）*/
+.up, .left, .right, .transform1, .transform2 {
+	opacity: 0;		/*透明度（透明の状態）*/
+}
+/*共通設定（要素が見えたら実行するアクション）*/
+.upstyle, .leftstyle, .rightstyle, .transform1style, .transform2style {
+	opacity: 1;		/*透明度（色が100%出た状態）*/
+	transition: 0.5s 0.5s;	/*0.5sはアニメーションの実行時間0.5秒。0.5sは0.5秒遅れてスタートする指定。*/
+}
+/*upスタイル。下から上にフェードインしてくるスタイル（待機中）*/
+.up {
+	bottom: -50px;	/*基準値の下50pxの場所からスタート*/
+}
+/*要素が見えたら実行するアクション*/
+.upstyle {
+	bottom: 0px;	/*基準値まで戻す*/
+}
+/*leftスタイル。左からフェードインしてくるスタイル（待機中）*/
+.left {
+	left: -100px;	/*基準値より左に100pxの場所からスタート*/
+}
+/*要素が見えたら実行するアクション*/
+.leftstyle {
+	left: 0px;		/*基準値まで戻す*/
+}
+/*rightスタイル。右からフェードインしてくるスタイル（待機中）*/
+.right {
+	right: -100px;	/*基準値より右に100pxの場所からスタート*/
+}
+/*要素が見えたら実行するアクション*/
+.rightstyle {
+	right: 0px;		/*基準値まで戻す*/
+}
+/*transform1スタイル。その場で回転するスタイル（待機中）*/
+.transform1 {
+	transform: scaleX(0);	/*幅を0%でスタート*/
+}
+/*要素が見えたら実行するアクション*/
+.transform1style {
+	transform: scaleX(1);	/*幅を100%に戻す*/
+}
+/*transform2スタイル。倒れた状態から起き上がるスタイル（待機中）*/
+.transform2 {
+	transform: perspective(400px) rotateX(100deg);
+}
+/*要素が見えたら実行するアクション*/
+.transform2style {
+	transform: perspective(0px) rotateX(0deg);
+}
+
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;		/*文字サイズ*/
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {background: #c3b5a2;background: rgba(0,0,0,0.1);padding: 5px 10px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.p0 {padding:0 !important;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 15px;list-style: disc;}
+.color1 {color: #ffff00;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+.w50 {overflow: hidden;width: 50%;}
+.fl {float: left;}
+.fr {float: right;}
+.big1 {font-size: 40px;}
+.mini1 {font-size: 11px;display: inline-block;line-height: 1.5;}
+.sh {display: none;}
+
+
+/*診療時間の左右表示を無効にする  */
+@media screen and (max-width:1200px){
+
+	/* ホーム */
+	#mustknown{
+		flex-direction: column;
+	}
+
+	#mustknown #timelist-text{
+		margin-left:0;
+		width:80%;
+		margin:0 auto;
+
+	}
+
+	#mustknown #time-list1{
+		text-align: center;
+	}
+
+	#contents h3{
+		margin-top:50px;
+	}
+
+	/* ごあいさつのページ */
+	#greeting-contents{
+		flex-direction: column;
+	}
+
+	#greetingcard{
+		margin-bottom:50px;
+	}
+
+	#greetingcard{
+		width:80%;
+	}
+
+	#greeting-faceimg{
+		width:80%:
+	}
+
+}
+
+
+
+
+/*画面を「縦向き」にした場合の「幅」が「1024px以下」の場合の設定。主にタブレット環境。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1024px){
+
+/*ヘッダー
+---------------------------------------------------------------------------*/
+/*ロゴ画像（トップページのロゴ）*/
+#top #logo {
+	left: 30%;
+	top: 25%;
+	width: 40%;		/*画像幅*/
+}
+
+#telpage-border,#dog-prevention{
+	width:90%;
+}
+
+
+#guidelist,#contents p,#contents h3{
+	width:80%;
+}
+
+#nighthospital ul{
+	padding:0;
+}
+
+#telpage-border li{
+	padding:0 20px 0 40px;
+}
+
+#telpage-border li:before{
+	left:0.7em;
+}
+
+table th,table td{
+	font-size:15px;
+	padding:0;
+	border:solid 2px #FCC68F;
+}
+
+#addresspage{
+	width:90%;
+	flex-direction: column;
+}
+
+#addresspage img{
+	width:75%;
+	margin-bottom:30px;
+}
+
+#hospitalinside-flex{
+	width:100%;
+}
+
+#hospitalinside-flex div{
+	width:100%;
+	margin:0 5px;
+	padding:16px;
+}
+
+#kitten-letter{
+	width:100%;
+}
+
+
+
+
+}
+
+
+@media screen and (max-width:830px){
+	#treatment{
+		flex-direction: column;
+	}
+
+	#treatment a{
+		margin:0 auto;
+		margin-bottom:20px;
+	}
+
+
+
+/* 診療案内の調整 */
+@media screen and (max-width:745px){
+
+#nighthospital-name,#nighthospital,#nighthospital li{
+	width:80%;
+}
+
+#nighthospital{
+	padding:2em 1.5em;
+}
+
+#nighthospital li{
+	line-height: 30px;
+}
+
+table i,#tabletd-triangle{
+	font-size:20px;
+	color:#F9BA7A;
+
+}
+
+#telpage{
+	width:85%;
+}
+
+@media screen and (max-width:600px){
+
+#mustknown ul,ol{
+	width:90%;
+	font-size:13px;
+
+
+}
+
+
+
+
+/*画面を「横向き」にした場合の「高さ」が「420px以下」の場合の設定。主にスマホを横向きで見た場合の設定。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (orientation: landscape) and (max-height:420px){
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*スマホ用メニューブロック*/
+#menubar-s {
+	padding-bottom: 20px;
+}
+/*メニュー１個あたりの設定*/
+#menubar-s li a {
+	float: left;		/*左に回り込みさせて２列にする*/
+	width: 40%;			/*幅*/
+	margin-left: 4%;	/*メニューの左側に空けるスペース*/
+}
+
+/*コンテンツ（色のついたメインブロック）
+---------------------------------------------------------------------------*/
+/*コンテンツ内のh2見出しにclass="img"をつけた場合（各ブロック冒頭の円形のアクセント用イラスト）*/
+#contents h2.img {
+	width: 100px;		/*画像幅*/
+	top: -30px;		/*上に30px移動させる設定*/
+	box-shadow: 0px 5px 0px 0px #fff,0px 10px 5px 0px rgba(0,0,0,0.2);	/*２つの影を指定。前半は白いくっきりした影、２つ目は薄い黒っぽい影。*/
+}
+/*上の円形イラスト内のテキスト*/
+#contents h2.img span {
+	top: 15%;			/*円イラストに対して上から15%の場所に配置*/
+	font-size: 10px;	/*文字サイズ*/
+	letter-spacing: 0.1em;	/*文字間隔*/
+}
+/*bg1〜bg4背景色（共通）*/
+.bg1,.bg2,.bg3,.bg4 {
+	padding: 0 5% 50px;
+}
+
+
+
+
+
+#contents p,#news ul{
+	width:80%;
+}
+
+
+
+}
+
+/* #telpageの調整	 */
+@media screen and (max-width:480px){
+	#telpage h4,#telpage a{
+		font-size:13px;
+	}
+
+	#telpage i{
+		font-size:15px;
+		line-height: 22px;
+		margin-left: 12px;
+	}
+
+	#telpage h4{
+		padding-right: 12px;
+	}
+
+
+}
+
+/*画面を「縦向き」にした場合の「幅」が「420px以下」の場合の設定。主にスマホを縦向きで見た場合の設定。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (orientation: portrait) and (max-width:420px){
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body{
+	font-size: 12px;	/*文字サイズ*/
+	line-height: 1.5;	/*行間*/
+}
+
+#br-spa{
+	display:block;
+}
+
+#nighthospital li,#kitten-letter p,#treatment h4 span,#dog-prevention p,#prevention-request{
+	font-size:12px;
+}
+
+#kitten-letter p{
+	line-height: 28px;
+}
+
+#treatment{
+	width:95%;
+}
+
+#treatment h4{
+	width:240px;
+	margin:0;
+	padding:10px;
+}
+
+#telpage-border li{
+	font-size:12px;
+	line-height: 25px;
+	margin-bottom:10px;
+}
+
+#telpage-border span,#time-table p,#addresspage p span,#night-tag,#nighthospital-name,
+#hospitalinside-flex h4,#kitten-letter h4,#kitten-letter span,#treatment h4,
+#dog-prevention li,.surgerypage span,.prevbtn{
+	font-size:15px;
+}
+
+#kitten-letter img{
+	width:200px;
+}
+
+#dog-prevention img{
+	width:25px;
+}
+
+#dog-prevention li{
+	margin:7px 0 10px 10px;
+}
+
+.prevbtn{
+	opacity: 0.7;
+  padding: 5px 10px;
+}
+
+/*ヘッダー
+---------------------------------------------------------------------------*/
+/*ロゴ画像（トップページのロゴ）*/
+#top #logo {
+	left: 20%;
+	top: 28%;
+	width: 60%;		/*画像幅*/
+}
+
+/*コンテンツ（色のついたメインブロック）
+---------------------------------------------------------------------------*/
+/*コンテンツ内のh2見出し*/
+#contents h2 {
+	font-size: 20px;	/*文字サイズ*/
+}
+/*コンテンツ内のh2見出しにclass="img"をつけた場合（各ブロック冒頭の円形のアクセント用イラスト）*/
+#contents h2.img {
+	width: 100px;		/*画像幅*/
+	top: -30px;		/*上に30px移動させる設定*/
+	box-shadow: 0px 5px 0px 0px #fff,0px 10px 5px 0px rgba(0,0,0,0.2);	/*２つの影を指定。前半は白いくっきりした影、２つ目は薄い黒っぽい影。*/
+}
+/*上の円形イラスト内のテキスト*/
+#contents h2.img span {
+	top: 8%;			/*円イラストに対して上から15%の場所に配置*/
+	font-size: 10px;	/*文字サイズ*/
+	letter-spacing: 0.1em;	/*文字間隔*/
+}
+/*bg1〜bg4背景色（共通）*/
+.bg1,.bg2,.bg3,.bg4 {
+	padding: 0 5% 40px;
+}
+/*段落タグ*/
+#contents p {
+	padding: 0 10px 20px;		/*上、左右、下への余白*/
+}
+
+#contents p{
+	width:90%;
+}
+
+
+#news ul{
+	width:90%;
+}
+
+/* ごあいさつのページ */
+
+#greetingcard{
+	width:95%;
+}
+
+#guidelist li{
+	font-size:13px;
+}
+
+#guidelist{
+	padding:2em 1em 2em 4em;
+}
+
+/* 診療案内のページ */
+table td,table th{
+	height:40px;
+}
+
+#nighthospital-name{
+	padding:0 20px;
+}
+
+/* 院内設備のページ */
+#hospitalinside-flex{
+	flex-direction: column;
+	margin-bottom:0;
+}
+
+#hospitalinside-flex div{
+	width:80%;
+	margin:0 auto;
+	margin-bottom:20px;
+}
+
+.image-hidden{
+	display:none;
+}
+
+/* 新しい家族のページ */
+.guide-textcenter{
+	margin-bottom:0px;
+}
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	background: url(../images/footer_bgimg.png) no-repeat 90% 90%/40%, url(../images/footer_bg.jpg);	/*背景画像の読み込み。幅40%。と、壁紙の読み込み。*/
+}
+footer h3 {
+	font-size: 20px;	/*文字サイズ*/
+	text-align: center;	/*文字を中央に*/
+	padding-bottom: 10px;
+}
+/*footer内の左右のブロック指定*/
+#footer-left,#footer-right {
+	width: auto;
+	float: none;
+	padding: 0 5%;
+}
+
+/*「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*見出しを含まないお知らせブロック*/
+#new dl {
+	padding: 0 10px 20px;	/*上、左右、下へのボックス内の余白*/
+}
+/*日付設定*/
+#new dt {
+	float: none;
+	width: auto;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 0;
+}
+
+}
+
+/* 改行位置の変更 */
+@media screen and (max-width:668px){
+
+	#br-sp {
+		display:block;
+	 }
+
+	.enspnone{
+ 		display:none
+ 	}
+
+	#nighthospital li{
+		padding-left:50px;
+	}
+
+	#nighthos-tel:before,#nighthos-address:before,#nighthos-time:before{
+		left:0.8em;
+	}
+
+/*画面の「幅」が「820px以下」の場合の設定。この環境でメインメニューを折りたたむ。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:820px){
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*アニメーションのフレーム設定。全100コマアニメーションだと思って下さい。
+透明(opacity: 0;)から色をつける(opacity: 1;)までの指定。*/
+@keyframes menubar {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+/*スマホ用メニューブロック*/
+#menubar-s {
+	display: block;overflow: hidden;
+	position: fixed;z-index: 50;
+	top: 0px;
+	width: 100%;
+	background: rgba(0,0,0,0.8);	/*背景色*/
+	border-top: 1px solid #fff;		/*上の線の幅、線種、色*/
+	animation-name: menubar;		/*上のkeyframesの名前*/
+	animation-duration: 0.5s;	/*アニメーションの実行時間。0.5秒。*/
+	animation-fill-mode: both;	/*待機中は最初のキーフレームを、完了後は最後のキーフレームを維持*/
+}
+/*メニュー１個あたりの設定*/
+#menubar-s li a {
+	display: block;text-decoration: none;
+	padding: 15px;	/*メニュー内の余白*/
+	border-bottom: 1px solid #fff;	/*下の線の幅、線種、色*/
+	color: #fff;	/*文字色*/
+	font-size: 20px;
+}
+/*PC用メニューを非表示にする*/
+#menubar {display: none;}
+
+/*３本バーアイコン設定
+---------------------------------------------------------------------------*/
+/*３本バーブロック*/
+#menubar_hdr {
+	display: block;
+	position: fixed;z-index: 50;
+	top: 10px;		/*上から10pxの場所に配置*/
+	right: 10px;	/*右から10pxの場所に配置*/
+	border-radius: 50%;	/*円形にする設定。四角形がいいならこの行削除。*/
+	border: 1px solid #fff;	/*枠線の幅、線種、色*/
+}
+/*アイコン共通設定*/
+#menubar_hdr.close,
+#menubar_hdr.open {
+	width: 50px;	/*幅*/
+	height: 50px;	/*高さ*/
+}
+/*三本バーアイコン*/
+#menubar_hdr.close {
+	background: #fa9837 url(../images/icon_menu.png) no-repeat center top/50px;	/*背景色、背景画像の読み込み、画像の上半分（３本マーク）を表示。幅は50px。*/
+}
+/*閉じるアイコン*/
+#menubar_hdr.open {
+	background: #fa9837 url(../images/icon_menu.png) no-repeat center bottom/50px;	/*背景色、背景画像の読み込み、画像の下半分（×マーク）を表示。幅は50px。*/
+}
+
+/*商品メニューページの設定（menu.html）
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list {
+	width: 40%;			/*ボックスの幅*/
+	margin: 0 5% 20px;	/*上、左右、下へのボックス内の余白*/
+	height: 400px;		/*ボックスの高さ。*/
+}
+
+}
+
+
+
+/*画面の「幅」が「420px以下」の場合の設定。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:420px){
+
+/*ヘッダー
+---------------------------------------------------------------------------*/
+/*ロゴ画像（トップページ以外のロゴ）*/
+#logo {
+	width: 50%;	/*画像幅*/
+}
+
+/*商品メニューページの設定（menu.html）
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list {
+	float: none;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+}
+/*写真の設定*/
+.list figure img {
+	float: left;	/*左に回り込み*/
+	width: 30%;		/*写真の幅*/
+}
+/*写真の右上にある金額*/
+.list figure span {
+	width: 40px;		/*幅*/
+	line-height: 40px;	/*高さ*/
+	font-size: 10px;	/*文字サイズ*/
+	left: 0%;	/*listブロックに対して左から0%の場所に配置*/
+	top: 0%;	/*listブロックに対して上から0%の場所に配置*/
+}
+/*ボックス内のh4見出し*/
+.list h4, .list p {
+	text-align: left;	/*文字を左寄せ*/
+	margin-left: 35%;	/*左に空けるスペース。上の写真の幅をみて調整して下さい。*/
+}
+
+}
+
+/* 微調整 */
+@media screen and (orientation: portrait) and (max-width:1176px){
+
+	#contents #timelist-text{
+		float:none;
+		width:80%;
+		margin:0 auto;
+	}
+
+	#contents h3{
+		margin-top:30px;
+	}
+
+
+}
+
+@media screen and (max-width:340px){
+	#mustknown{
+		width:95%;
+	}
+
+
+	#mustknown ul,ol{
+		width:90%;
+	}
+
+
+/*画面を「横向き」にした場合の「高さ」が「420px以下」かつ「幅」が「820px以下」の場合の設定。
+主にスマホを横向きで見た場合iPhone Xの設定。ロゴが若干隠れるので微調整しているだけです。
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (orientation: landscape) and (max-height:420px) and (max-width:820px){
+
+/*ヘッダー
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック（トップページへの追加設定）*/
+#top header {
+	height: 95%;	/*高さ*/
+}
+
+}
